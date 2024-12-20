@@ -2,9 +2,10 @@
     --primario: #3045b0;
     --secundario: #dea054;
     --blanco: #fff;
+    --primario-claro: #d3d9f5;
 }
 
-
+/* --COMUNES-- */
 html {
     font-size: 62.5%;
 }
@@ -15,6 +16,11 @@ body {
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    background-image: linear-gradient(to top, var(--primario-claro) 0%, var(--blanco) 100%);
+}
+
+h1,h2,h3 {
+    text-align: center;
 }
 
 h1 {
@@ -29,20 +35,6 @@ h3 {
     font-size: 1.8rem;
 }
 
-h1,h2,h3 {
-    text-align: center;
-}
-
-.boton {
-    background-color: var(--primario);
-    color: var(--blanco);
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 1.5rem 2rem;
-    font-weight: bold;
-    border-radius: .5rem;
-}
-
 header h1 {
     margin: 2.5rem auto;
 }
@@ -51,15 +43,31 @@ h1 span {
     font-size: 2.5rem;
 }
 
-.contenedorNav {
+.contenedor {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+
+/*-----------------------------*/
+
+/* --NAV-- */
+.nav-bg {
     background-color: var(--primario);
 }
 
-nav {
+.navegador-principal {
     display: flex;
-    margin: 0 auto;
     justify-content: space-around;
 }
+
+@media (max-width: 768px) {
+    .navegador-principal {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 
 nav a {
     padding: 1.5rem;
@@ -72,32 +80,35 @@ nav a:hover {
     background-color: var(--secundario);
     color: black;
 }
+/*---------------------------------*/
 
-.introduccion {
+
+/* --INTRODUCCION-- */
+.hero {
     height: 50rem;
     background-image: url(https://ultranet.com.my/wp-content/uploads/2023/04/getty_837392998_411522.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: center;
-    
- 
+    margin-bottom: 5rem;
 }
 
-.contenido-introduccion{
+.hero h2 {
+    color: var(--blanco);
+    margin: 0;
+}
+
+.contenido-hero {
     display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: center;
     justify-content: center;
+    color: var(--blanco);
     background-color: rgb(0 0 0 / 70%);
     width: 100%;
     height: 100%;
     margin: auto;
-}
-
-.contenido-introduccion,
-.contenido-introduccion {
-    color: var(--blanco);
 }
 
 .ubicacion {
@@ -105,19 +116,30 @@ nav a:hover {
     align-items: flex-end;
 }
 
-img {
-    width: 100%;
-    height: auto;
-}
-
-.introduccion h2 {
+.boton {
+    background-color: var(--primario);
     color: var(--blanco);
-    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 2rem;
+    font-weight: bold;
+    border-radius: .5rem;
+}
+/*-----------------------------*/
+
+.sombra {
+    -webkit-box-shadow: 6px 8px 14px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 8px 14px -6px rgba(0,0,0,0.75);
+    box-shadow: 6px 8px 14px -6px rgba(0,0,0,0.75);
+    background-color: var(--blanco);
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid: 1fr / repeat(3, 1fr);
     }
 }
+
