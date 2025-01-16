@@ -1,1 +1,1 @@
-Just another simple web to practise frontend skills
+Simple static web to practise my html and css skills.
